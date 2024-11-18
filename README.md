@@ -1,7 +1,7 @@
 # RevoOS
 Very simple operating system with some simple programs and the project is still under development
 
-![main](https://github.com/user-attachments/assets/2f4db3fc-cec3-49d1-8be1-f232540494a4)
+![note](https://github.com/user-attachments/assets/3736fc68-02a7-433c-b363-4fff31403dbf)
 
 There is also a simple calculator.
 
@@ -12,4 +12,4 @@ It includes some advanced mathematical operations, as well as simple ones.
 A simple notepad that you can write on and do some light things on.
 
 
-![note](https://github.com/user-attachments/assets/3736fc68-02a7-433c-b363-4fff31403dbf)
+![main](https://github.com/user-attachments/assets/2f4db3fc-cec3-49d1-8be1-f232540494a4)
