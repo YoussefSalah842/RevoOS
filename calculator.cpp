@@ -1,47 +1,63 @@
 #include <iostream>
+#include <limits> // For numeric limits (to clear input buffer)
 using namespace std;
 
 void calculator() {
-    int num1, num2, choice;
-    double result;
+    double num1, num2;
+    char op;
+    char continueCalc;
+    
+    do {
+        system("cls"); // Clear the screen for a fresh interface
+        cout << "====================\n";
+        cout << "     Calculator     \n";
+        cout << "====================\n";
+        
+        // Input for the first number
+        cout << "Enter first number: ";
+        while (!(cin >> num1)) {
+            cin.clear(); // clear error flag
+            cin.ignore(numeric_limits<streamsize>::max(), '\n'); // discard invalid input
+            cout << "Invalid input! Please enter a valid number: ";
+        }
 
-    cout << "\n=== Calculator ===\n";
-    cout << "Choose an operation:\n";
-    cout << "1. Addition\n";
-    cout << "2. Subtraction\n";
-    cout << "3. Multiplication\n";
-    cout << "4. Division\n";
-    cout << "Enter your choice: ";
-    cin >> choice;
+        // Input for the operator
+        cout << "Enter operator (+, -, *, /): ";
+        cin >> op;
 
-    cout << "Enter the first number: ";
-    cin >> num1;
-    cout << "Enter the second number: ";
-    cin >> num2;
+        // Input for the second number
+        cout << "Enter second number: ";
+        while (!(cin >> num2)) {
+            cin.clear(); // clear error flag
+            cin.ignore(numeric_limits<streamsize>::max(), '\n'); // discard invalid input
+            cout << "Invalid input! Please enter a valid number: ";
+        }
 
-    switch (choice) {
-        case 1:
-            result = num1 + num2;
-            cout << "Result: " << result << endl;
-            break;
-        case 2:
-            result = num1 - num2;
-            cout << "Result: " << result << endl;
-            break;
-        case 3:
-            result = num1 * num2;
-            cout << "Result: " << result << endl;
-            break;
-        case 4:
-            if (num2 == 0) {
-                cout << "Error: Division by zero is not allowed.\n";
-            } else {
-                result = (double)num1 / num2;
-                cout << "Result: " << result << endl;
-            }
-            break;
-        default:
-            cout << "Invalid choice.\n";
-    }
+        // Perform calculation
+        switch (op) {
+            case '+':
+                cout << "Result: " << num1 + num2 << endl;
+                break;
+            case '-':
+                cout << "Result: " << num1 - num2 << endl;
+                break;
+            case '*':
+                cout << "Result: " << num1 * num2 << endl;
+                break;
+            case '/':
+                if (num2 != 0)
+                    cout << "Result: " << num1 / num2 << endl;
+                else
+                    cout << "Error: Division by zero!\n";
+                break;
+            default:
+                cout << "Invalid operator!\n";
+        }
+
+        // Ask if the user wants to continue
+        cout << "\nDo you want to perform another calculation? (y/n): ";
+        cin >> continueCalc;
+    } while (continueCalc == 'y' || continueCalc == 'Y');
+
+    cout << "Returning to main menu...\n";
 }
-
