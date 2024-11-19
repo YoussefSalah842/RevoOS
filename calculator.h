@@ -3,5 +3,5 @@
 
 void calculator();
 
-#endif
+#endif // CALCULATOR_H
 

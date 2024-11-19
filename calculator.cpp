@@ -2,13 +2,21 @@
 #include "calculator.h"
 
 void calculator() {
-    double num1, num2;
-    char op;
-    std::cout << "\n--- Calculator ---\n";
-    std::cout << "Enter an expression (e.g., 5 + 3): ";
-    std::cin >> num1 >> op >> num2;
+    std::cout << "\n===================================================\n";
+    std::cout << "                    Calculator                     \n";
+    std::cout << "===================================================\n";
 
-    switch (op) {
+    double num1, num2;
+    char operation;
+
+    std::cout << "Enter first number: ";
+    std::cin >> num1;
+    std::cout << "Enter an operator (+, -, *, /): ";
+    std::cin >> operation;
+    std::cout << "Enter second number: ";
+    std::cin >> num2;
+
+    switch (operation) {
         case '+':
             std::cout << "Result: " << num1 + num2 << "\n";
             break;
@@ -22,10 +30,14 @@ void calculator() {
             if (num2 != 0)
                 std::cout << "Result: " << num1 / num2 << "\n";
             else
-                std::cout << "Error: Division by zero is not allowed.\n";
+                std::cerr << "Error: Division by zero is not allowed.\n";
             break;
         default:
-            std::cout << "Invalid operator. Use +, -, *, or /.\n";
+            std::cerr << "Error: Invalid operator.\n";
     }
+
+    std::cout << "Press Enter to return to the menu...\n";
+    std::cin.ignore();
+    std::cin.get();
 }
 

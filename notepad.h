@@ -3,5 +3,5 @@
 
 void notepad();
 
-#endif
+#endif // NOTEPAD_H
 
